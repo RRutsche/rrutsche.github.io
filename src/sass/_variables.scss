@@ -1,0 +1,43 @@
+/**
+ * This document defines all used variables 
+ */
+
+
+/**
+ * Colors
+ */
+$color_blue: #253E66;
+$color_tussock: #C29D4E;
+$color_burnt_sienna: #EF6555;
+$color_westar: #E3DFD7;
+
+
+$px: 1px !default;
+/**
+ * Bill App
+ */
+
+/**
+ * Fonts
+ */
+$font_light: 'Open Sans Light', Arial, sans-serif;
+$font_light_italic: 'Open Sans Light Italic', Arial, sans-serif;
+$font_normal: 'Open Sans Normal', Arial, sans-serif;
+
+/**
+ * fontsizes for pos, posc, prep
+ */
+$font-size-small: 12*$px;
+$font-size-normal: 18*$px;
+$font-size-xl: 24*$px;
+$font-size-xxl: 30*$px;
+$font-size-xxxl: 40*$px;
+$font-size-xxxxl: 50*$px;
+
+
+/**
+ * Dimension
+ */
+$border-radius: 4px;
+$border-radius-big: 20px;
+$bu: 10*$px;
