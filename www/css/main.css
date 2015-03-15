@@ -103,10 +103,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 21, ../../src/sass/_globals.scss */
 body {
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
   position: relative;
   font-family: "Open Sans Light", Arial, sans-serif;
   font-size: 18px;
@@ -122,6 +118,10 @@ body {
 /* line 1, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page {
   padding: 10px;
+}
+/* line 4, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page .text {
+  margin: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

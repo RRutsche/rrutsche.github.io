@@ -5,6 +5,8 @@ Backbone.$ = require('jquery');
 
 /** View */
 var Index = require('./Index.jsx');
+var Demo = require('./Demo.jsx');
+var NotFound = require('./NotFound.jsx');
 
 var App = React.createClass({
 

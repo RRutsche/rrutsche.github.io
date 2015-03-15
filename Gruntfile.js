@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	// set grunt settings
-	var port = grunt.option('port') || grunt.option('p') || 80;
+	var port = grunt.option('port') || grunt.option('p') || 9090;
 
 
 	// Project configuration.
@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 			server: {
 				options: {
 					port: port,
-					base: 'www/'
+					base: ''
 				}
 			}
 		},

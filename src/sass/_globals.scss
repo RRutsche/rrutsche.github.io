@@ -19,7 +19,6 @@
 	font-style: normal;
 }
 body {
-	@include user-select(none);
 	position: relative;
 	font-family: $font_light;
 	font-size: $font-size-normal;
