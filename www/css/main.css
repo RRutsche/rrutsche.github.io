@@ -123,5 +123,11 @@ body {
 .rrutsche-page .text {
   margin: 10px;
 }
+/* line 9, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page.demo .carousel-container {
+  position: relative;
+  width: 500px;
+  margin: 20px auto;
+}
 
 /*# sourceMappingURL=main.css.map */

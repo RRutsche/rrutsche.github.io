@@ -44,7 +44,8 @@ module.exports = function (grunt) {
 			},
 			// Re-build react js
 			react: {
-				files: ['src/**/*.js', 'src/**/*.jsx'],
+				files: ['src/**/*.js', 'src/**/*.jsx', 
+						'node_modules/react-component-carousel/build/Carousel.js'],
 				tasks: ['logSettings', 'jshint', 'browserify:react']
 			},
 			// livereload on html change

@@ -7,11 +7,16 @@ var Demo = React.createClass({
 		return (
 			<div className="rrutsche-page demo">
 				<div className="text">Demo - react-component-carousel</div>
-				<Carousel>
-					<img src="http://placehold.it/300x200"/>
-					<img src="http://placehold.it/300x200"/>
-					<img src="http://placehold.it/300x200"/>
-				</Carousel>
+				<div className="carousel-container">
+					<Carousel>
+						<img src="http://placehold.it/300x200"/>
+						<img src="http://placehold.it/300x200"/>
+						<img src="http://placehold.it/300x200"/>
+						<img src="http://placehold.it/300x200"/>
+						<img src="http://placehold.it/300x200"/>
+						<img src="http://placehold.it/300x200"/>
+					</Carousel>
+				</div>
 			</div>
 		);
 	}
