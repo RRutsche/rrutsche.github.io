@@ -32889,9 +32889,9 @@ var Demo = React.createClass({displayName: "Demo",
 			React.createElement("div", {className: "rrutsche-page demo"}, 
 				React.createElement("div", {className: "text"}, "Demo - react-component-carousel"), 
 				React.createElement(Carousel, null, 
-					React.createElement("img", {src: "http://placehold.it/350x150"}), 
-					React.createElement("img", {src: "http://placehold.it/350x150"}), 
-					React.createElement("img", {src: "http://placehold.it/350x150"})
+					React.createElement("img", {src: "http://placehold.it/300x200"}), 
+					React.createElement("img", {src: "http://placehold.it/300x200"}), 
+					React.createElement("img", {src: "http://placehold.it/300x200"})
 				)
 			)
 		);
