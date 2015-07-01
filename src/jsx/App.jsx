@@ -6,6 +6,7 @@ Backbone.$ = require('jquery');
 /** View */
 var Index = require('./Index.jsx');
 var Demo = require('./Demo.jsx');
+var DemoParallax = require('./DemoParallax.jsx');
 var NotFound = require('./NotFound.jsx');
 
 var App = React.createClass({
@@ -16,7 +17,7 @@ var App = React.createClass({
 		var Router = Backbone.Router.extend({
 			routes: {
 				'': this.index,
-				'demo': this.demo,
+				'parallax': this.parallax,
 				'*notFound': this.notFound
 			}
 		});
@@ -45,8 +46,8 @@ var App = React.createClass({
 		this.setState({page: <Index router={this.router}/>});
 	},
 
-	demo: function() {
-		this.setState({page: <Demo router={this.router}/>});
+	parallax: function() {
+		this.setState({page: <DemoParallax router={this.router}/>});
 	},
 
 	notFound: function() {

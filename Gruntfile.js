@@ -1,15 +1,17 @@
+var os = require('os');
 module.exports = function (grunt) {
 
 	// load grunt modules
 	require('load-grunt-tasks')(grunt);
 
-	// set grunt settings
-	var port = grunt.option('port') || grunt.option('p') || 9090;
+	// port
+	var defaultPort = os.platform().indexOf('win') === 0 ? 80 : 8080;
+	var port = grunt.option('port') || grunt.option('p') || defaultPort;
 
-
-	// Project configuration.
+	/**
+	 * GRUNT CONFIG
+	 */
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
 
 		// Web Server
 		connect: {
@@ -31,8 +33,8 @@ module.exports = function (grunt) {
 
 			// restart grunt on Gruntfile change
 			gruntfile: {
-				files: 'Gruntfile.js',
-				tasks: ['logSettings', 'jshint', 'build-dev'],
+				files: ['Gruntfile.js', 'package.json'],
+				tasks: ['logSettings', 'eslint', 'build-kitchensink'],
 				reload: true,
 				livereload: false
 			},
@@ -42,89 +44,71 @@ module.exports = function (grunt) {
 				tasks: ['logSettings', 'test'],
 				livereload: false
 			},
-			// Re-build react js
-			react: {
-				files: ['src/**/*.js', 'src/**/*.jsx', 
-						'node_modules/react-component-carousel/build/Carousel.js'],
-				tasks: ['logSettings', 'jshint', 'browserify:react']
+			// Re-build kitchensink
+			kitchensink: {
+				files: ['src/**/*.js', 'src/**/*.jsx'],
+				tasks: ['build-kitchensink']
 			},
 			// livereload on html change
 			html: {
 				files: 'src/*.html',
-				tasks: ['logSettings', 'copy:html']
+				tasks: ['logSettings', 'copy:kitchensink']
 			},
-			libs: {
-				files: ['src/lib/**/*.js'],
-				tasks: ['logSettings', 'copy:libs']
-			},
-			// compile sass on change
-			sass: {
-				files: 'src/sass/**/*.scss',
-				tasks: ['logSettings', 'clean:wwwcss', 'compass:dev']
+			assets: {
+				files: ['src/assets/**/*'],
+				tasks: ['logSettings', 'copy:assets']
 			},
 			test: {
 				files: ['src/test/**/*.js', 'src/test/**/*.jsx'],
 				tasks: ['logSettings', 'test'],
 				livereload: false
-			},
-			fonts: {
-				files: 'src/font/**',
-				tasks: ['logSettings', 'copy:fonts']
 			}
-		},
-
-		// clean directories for re-compiling
-		clean: {
-			test: 'test/*',
-			www: 'www/*',
-			wwwcss: ['www/css/*.css', 'www/css/*.css.map'],
 		},
 
 		copy: {
 			// copy html files to www directory
-			html: {
+			kitchensink: {
 				expand: true,
 				cwd: 'src/',
 				src: '*.html',
 				dest: 'www/',
 				filter: 'isFile'
 			},
-			libs: {
+			assets: {
 				expand: true,
-				cwd: 'src/lib/',
+				cwd: 'src/assets/',
 				src: ['**/*'],
-				dest: 'www/lib/'
-			},
-			fonts: {
-				expand: true,
-				cwd: 'src/font/',
-				src: ['*'],
-				dest: 'www/font/',
-				filter: 'isFile'
-			},
-			images: {
-				expand: true,
-				cwd: 'src/images/',
-				src: ['*'],
-				dest: 'www/images/',
-				filter: 'isFile'
+				dest: 'www/assets/'
 			}
+		},
+
+		// clean directories for re-compiling
+		clean: {
+			test: 'test/*',
+			kitchensink: 'www/*',
+			dist: 'dist/*'
 		},
 
 		// concatenate all files into one after react compilation
 		browserify: {
 			options: {
-				transform: ['reactify']
-			},
-			// compile react js
-			react: {
-				src: ['src/index.jsx'],
-				dest: 'www/js/app.built.js'
+				transform: [
+					['babelify']
+				]
 			},
 			// compile test files
 			test: {
 				src: ['src/test/**/*.jsx', 'src/test/**/*.js'],
 				dest: 'test/test.built.js'
+			},
+			kitchensink: {
+				src: ['src/index.jsx'],
+				dest: 'www/js/app.built.js'
+			},
+			dist: {
+				files: {
+					'dist/index.js': 'src/jsx/Parallax.jsx'
+				}
 			}
 		},
 
@@ -172,15 +156,20 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// checking JS files for correct code (even JSX)
-		jshint: {
-			options: {
-				curly: true,
-				eqeqeq: true,
-				eqnull: true,
-				browser: true
-			},
-			all: ['Gruntfile.js', 'src/**/*.js', 'src/**/*.jsx']
+		babel: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'src/jsx',
+					src: ['**/*.jsx'],
+					dest: 'dist',
+					ext: '.js'
+				}]
+			}
+		},
+
+		eslint: {
+			target: ['Gruntfile.js', 'src/**/*.js', 'src/**/*.jsx', 'src/test/**/*.js', 'src/test/**/*.jsx']
 		},
 
 		// testing environment
@@ -203,15 +192,13 @@ module.exports = function (grunt) {
 		grunt.log.writeln('-----------------------');
 	});
 
-	// registering build tasks
-	grunt.registerTask('build-dev', ['clean:www', 'compass:dev', 'browserify:react', 'copy']);
-	grunt.registerTask('build-dist', ['clean:www', 'compass:dist', 'browserify:react', 'copy', 'uglify']);
-	grunt.registerTask('build-test', ['clean:test', 'jshint', 'browserify:test']);
+	grunt.registerTask('build-dist', ['clean:dist', 'compass:dist', 'eslint', 'babel:dist', 'copy']);
+	grunt.registerTask('build-kitchensink', ['clean:kitchensink', 'compass:dev', 'eslint', 'babel:dist', 'browserify:kitchensink', 'copy']);
+	grunt.registerTask('build-test', ['clean:test', 'eslint', 'browserify:test']);
 
 	// registering test task (Use test-debug to debug tests)
-	grunt.registerTask('test', ['logSettings', 'build-test', 'karma:defaultBrowser']);
-	grunt.registerTask('test-debug', ['logSettings', 'build-test', 'karma:defaultBrowser_keepalive']);
-
-	// the default tasks
-	grunt.registerTask('default', ['logSettings', 'build-dev', 'connect', 'watch']);
+	grunt.registerTask('default', ['logSettings', 'build-kitchensink', 'connect', 'watch']);
+	grunt.registerTask('dist', ['logSettings', 'build-dist']);
+	grunt.registerTask('test', ['build-dist','build-test', 'karma:defaultBrowser']);
+	grunt.registerTask('test-debug', ['build-dist','build-test', 'karma:defaultBrowser_keepalive']);
 };

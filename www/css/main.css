@@ -85,19 +85,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  */
 @font-face {
   font-family: 'Open Sans Light';
-  src: url("../font/opensanslight.ttf");
+  src: url("../assets/font/opensanslight.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Open Sans Light Italic';
-  src: url("../font/opensanslightitalic.ttf");
+  src: url("../assets/font/opensanslightitalic.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Open Sans Normal';
-  src: url("../font/opensansregular.ttf");
+  src: url("../assets/font/opensansregular.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -128,6 +128,18 @@ body {
   position: relative;
   width: 500px;
   margin: 20px auto;
+}
+/* line 16, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page.demo-parallax {
+  text-align: center;
+}
+/* line 18, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page.demo-parallax h1 {
+  font-size: 40px;
+}
+/* line 21, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page.demo-parallax h2 {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

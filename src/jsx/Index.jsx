@@ -5,11 +5,10 @@ var Index = React.createClass({
 	render: function() {
 		return (
 			<div className="rrutsche-page index">
-				<div className="text">Nothing here yet</div>
+				<a href="#parallax">react-parallax-component</a>
 			</div>
 		);
 	}
-
 });
 
 module.exports = Index;
