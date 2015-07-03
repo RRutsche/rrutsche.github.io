@@ -10,11 +10,14 @@ var DemoParallax = React.createClass({
 				<Parallax bgImage="www/assets/1.jpg" strength={300} log={true}>
 					<br/><br/><br/><br/>
 					<h1>first parallax</h1>
-					<h2>with some crazy text that describes: nothing!</h2>
 					<br/>
-					<h2>it's just there</h2>
+					<br/>
 					<br/><br/><br/><br/>
-
+					<img src="http://www.fillmurray.com/400/400" alt="fill murray"/>
+					<br/>
+					<br/>
+					<h2>filled with murray</h2>
+					<br/>
 				</Parallax>
 				<div>
 					<br/><br/><br/><br/>

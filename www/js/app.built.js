@@ -32469,20 +32469,20 @@ var DemoParallax = React.createClass({
 					null,
 					'first parallax'
 				),
+				React.createElement('br', null),
+				React.createElement('br', null),
+				React.createElement('br', null),
+				React.createElement('br', null),
+				React.createElement('br', null),
+				React.createElement('br', null),
+				React.createElement('img', { src: 'http://www.fillmurray.com/400/400', alt: 'fill murray' }),
+				React.createElement('br', null),
+				React.createElement('br', null),
 				React.createElement(
 					'h2',
 					null,
-					'with some crazy text that describes: nothing!'
+					'filled with murray'
 				),
-				React.createElement('br', null),
-				React.createElement(
-					'h2',
-					null,
-					'it\'s just there'
-				),
-				React.createElement('br', null),
-				React.createElement('br', null),
-				React.createElement('br', null),
 				React.createElement('br', null)
 			),
 			React.createElement(
