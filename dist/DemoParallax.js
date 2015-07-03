@@ -13,7 +13,7 @@ var DemoParallax = React.createClass({
 			{ className: 'rrutsche-page demo-parallax' },
 			React.createElement(
 				Parallax,
-				{ bgImage: 'www/assets/1.jpg', strength: 300, log: true },
+				{ bgImage: 'www/assets/3.jpg', strength: 300, log: true },
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),
@@ -116,7 +116,7 @@ var DemoParallax = React.createClass({
 			),
 			React.createElement(
 				Parallax,
-				{ bgImage: 'www/assets/3.jpg' },
+				{ bgImage: 'www/assets/1.jpg' },
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),

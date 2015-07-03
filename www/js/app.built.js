@@ -12616,12 +12616,7 @@ var Parallax = (function (_React$Component) {
    */
 		value: function getChildStyle() {
 			return {
-				position: "absolute",
-				top: "50%",
-				left: "50%",
-				WebkitTransform: "translate(-50%, -50%)",
-				msTransform: "translate(-50%, -50%)",
-				transform: "translate(-50%, -50%)"
+				position: "relative"
 			};
 		}
 	}, {
@@ -32461,7 +32456,7 @@ var DemoParallax = React.createClass({
 			{ className: 'rrutsche-page demo-parallax' },
 			React.createElement(
 				Parallax,
-				{ bgImage: 'www/assets/1.jpg', strength: 300, log: true },
+				{ bgImage: 'www/assets/3.jpg', strength: 300, log: true },
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),
@@ -32564,7 +32559,7 @@ var DemoParallax = React.createClass({
 			),
 			React.createElement(
 				Parallax,
-				{ bgImage: 'www/assets/3.jpg' },
+				{ bgImage: 'www/assets/1.jpg' },
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),

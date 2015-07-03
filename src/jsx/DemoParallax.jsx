@@ -7,7 +7,7 @@ var DemoParallax = React.createClass({
 
 		return (
 			<div className="rrutsche-page demo-parallax">
-				<Parallax bgImage="www/assets/1.jpg" strength={300} log={true}>
+				<Parallax bgImage="www/assets/3.jpg" strength={300} log={true}>
 					<br/><br/><br/><br/>
 					<h1>first parallax</h1>
 					<br/>
@@ -43,7 +43,7 @@ var DemoParallax = React.createClass({
 					<h1>what?</h1>
 					<br/><br/><br/><br/>
 				</Parallax>
-				<Parallax bgImage="www/assets/3.jpg">
+				<Parallax bgImage="www/assets/1.jpg">
 					<br/><br/><br/><br/>
 					<h1>last one...</h1>
 					<br/>
