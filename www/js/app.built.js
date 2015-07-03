@@ -12460,6 +12460,7 @@ var Parallax = (function (_React$Component) {
 		this.node = null;
 		this.windowHeight = this.getWindowHeight();
 		this.childStyle = this.getChildStyle();
+		this.parallaxStyle = this.getParallaxStyle();
 		this.state = {
 			top: 0,
 			autoHeight: false
@@ -12485,7 +12486,7 @@ var Parallax = (function (_React$Component) {
 		value: function render() {
 			return _react2["default"].createElement(
 				"div",
-				{ className: "react-parallax", style: this.getParallaxStyle() },
+				{ className: "react-parallax", style: this.parallaxStyle },
 				this.props.bgImage ? _react2["default"].createElement("img", { className: "react-parallax-bgimage", src: this.props.bgImage, style: this.getBackgroundStyle(), ref: "bgImage", alt: "" }) : "",
 				_react2["default"].createElement(
 					"div",
@@ -12549,7 +12550,6 @@ var Parallax = (function (_React$Component) {
 			var img = _react2["default"].findDOMNode(this.refs.bgImage);
 			if (img && img.naturalWidth / (img.naturalHeight - this.props.strength) * this.contentHeight < this.contentWidth) {
 				autoHeight = true;
-				console.log(autoHeight);
 			}
 
 			// save scroll position
@@ -12603,7 +12603,6 @@ var Parallax = (function (_React$Component) {
 			var style = {
 				position: "relative",
 				background: this.props.bgColor,
-				height: this.contentHeight,
 				overflow: "hidden"
 			};
 			return style;
