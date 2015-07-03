@@ -29,13 +29,13 @@ var DemoParallax = React.createClass({
 				</div>
 				<Parallax bgImage="www/assets/2.jpg" blur={3}>
 					<br/><br/><br/><br/>
-					<h1>its the third</h1>
-					<h2>text just has to fill the container to make the image visible</h2>
+					<h1>second one</h1>
 					<br/>
 					<br/>
-					<h2>it's just there</h2>
-					<br/><br/><br/><br/>
-					
+					<h2>it's also filled</h2>
+					<br/><br/>
+					<img src="http://www.fillmurray.com/g/500/400" alt="fillmurray"/>
+					<br/><br/>
 				</Parallax>
 				<Parallax bgColor="darkgrey">
 					<br/><br/><br/><br/>
@@ -46,10 +46,9 @@ var DemoParallax = React.createClass({
 				<Parallax bgImage="www/assets/3.jpg">
 					<br/><br/><br/><br/>
 					<h1>last one...</h1>
-					<h2>one more placeholder</h2>
 					<br/>
 					<br/>
-					<h2>empty</h2>
+					<img src="http://www.fillmurray.com/g/600/500" alt="fillmurray"/>
 					<br/><br/><br/><br/>
 					
 				</Parallax>

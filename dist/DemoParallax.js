@@ -77,22 +77,18 @@ var DemoParallax = React.createClass({
 				React.createElement(
 					'h1',
 					null,
-					'its the third'
-				),
-				React.createElement(
-					'h2',
-					null,
-					'text just has to fill the container to make the image visible'
+					'second one'
 				),
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement(
 					'h2',
 					null,
-					'it\'s just there'
+					'it\'s also filled'
 				),
 				React.createElement('br', null),
 				React.createElement('br', null),
+				React.createElement('img', { src: 'http://www.fillmurray.com/g/500/400', alt: 'fillmurray' }),
 				React.createElement('br', null),
 				React.createElement('br', null)
 			),
@@ -130,18 +126,9 @@ var DemoParallax = React.createClass({
 					null,
 					'last one...'
 				),
-				React.createElement(
-					'h2',
-					null,
-					'one more placeholder'
-				),
 				React.createElement('br', null),
 				React.createElement('br', null),
-				React.createElement(
-					'h2',
-					null,
-					'empty'
-				),
+				React.createElement('img', { src: 'http://www.fillmurray.com/g/600/500', alt: 'fillmurray' }),
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),

@@ -12547,8 +12547,9 @@ var Parallax = (function (_React$Component) {
 
 			// set autoHeight or autoWidth
 			var img = _react2["default"].findDOMNode(this.refs.bgImage);
-			if (img && img.naturalWidth / img.naturalHeight * this.contentHeight < this.contentWidth) {
+			if (img && img.naturalWidth / (img.naturalHeight - this.props.strength) * this.contentHeight < this.contentWidth) {
 				autoHeight = true;
+				console.log(autoHeight);
 			}
 
 			// save scroll position
@@ -12582,8 +12583,9 @@ var Parallax = (function (_React$Component) {
 			var width = !this.state.autoHeight ? "auto" : this.contentWidth;
 			var style = {
 				position: "absolute",
-				left: "0",
-				top: "-" + backPos + "px",
+				left: "50%",
+				WebkitTransform: "translate3d(-50%, -" + backPos + "px, 0)",
+				transform: "translate3d(-50%, 0, 0)",
 				height: height,
 				width: width,
 				WebkitFilter: "blur(" + this.props.blur + "px)",
@@ -32523,22 +32525,18 @@ var DemoParallax = React.createClass({
 				React.createElement(
 					'h1',
 					null,
-					'its the third'
-				),
-				React.createElement(
-					'h2',
-					null,
-					'text just has to fill the container to make the image visible'
+					'second one'
 				),
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement(
 					'h2',
 					null,
-					'it\'s just there'
+					'it\'s also filled'
 				),
 				React.createElement('br', null),
 				React.createElement('br', null),
+				React.createElement('img', { src: 'http://www.fillmurray.com/g/500/400', alt: 'fillmurray' }),
 				React.createElement('br', null),
 				React.createElement('br', null)
 			),
@@ -32576,18 +32574,9 @@ var DemoParallax = React.createClass({
 					null,
 					'last one...'
 				),
-				React.createElement(
-					'h2',
-					null,
-					'one more placeholder'
-				),
 				React.createElement('br', null),
 				React.createElement('br', null),
-				React.createElement(
-					'h2',
-					null,
-					'empty'
-				),
+				React.createElement('img', { src: 'http://www.fillmurray.com/g/600/500', alt: 'fillmurray' }),
 				React.createElement('br', null),
 				React.createElement('br', null),
 				React.createElement('br', null),
