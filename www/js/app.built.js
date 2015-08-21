@@ -12480,6 +12480,7 @@ var Parallax = (function (_React$Component) {
 			this.onScroll = this.onScroll.bind(this);
 			this.onWindowResize = this.onWindowResize.bind(this);
 			this.updatePosition = this.updatePosition.bind(this);
+			this.onWindowLoad = this.onWindowLoad.bind(this);
 		}
 	}, {
 		key: "render",
@@ -12504,7 +12505,7 @@ var Parallax = (function (_React$Component) {
 		value: function componentWillMount() {
 			document.addEventListener("scroll", this.onScroll, false);
 			window.addEventListener("resize", this.onWindowResize, false);
-			window.addEventListener("load", this.updatePosition, false);
+			window.addEventListener("load", this.onWindowLoad, false);
 		}
 	}, {
 		key: "componentDidMount",
@@ -12525,11 +12526,17 @@ var Parallax = (function (_React$Component) {
 		value: function componentWillUnmount() {
 			document.removeEventListener("scroll", this.onScroll, false);
 			window.removeEventListener("resize", this.onWindowResize, false);
-			window.removeEventListener("load", this.updatePosition, false);
+			window.removeEventListener("load", this.onWindowLoad, false);
 		}
 	}, {
 		key: "onScroll",
 		value: function onScroll(event) {
+			this.updatePosition();
+		}
+	}, {
+		key: "onWindowLoad",
+		value: function onWindowLoad() {
+			this.log("windowLoad");
 			this.updatePosition();
 		}
 	}, {
@@ -12541,6 +12548,7 @@ var Parallax = (function (_React$Component) {
    * fit the component space optimally
    */
 		value: function updatePosition() {
+			this.log("updatePosition");
 			var autoHeight = false;
 			var content = _react2["default"].findDOMNode(this.refs.content);
 			this.contentHeight = content.getBoundingClientRect().height;
@@ -12585,7 +12593,7 @@ var Parallax = (function (_React$Component) {
 				position: "absolute",
 				left: "50%",
 				WebkitTransform: "translate3d(-50%, -" + backPos + "px, 0)",
-				transform: "translate3d(-50%, 0, 0)",
+				transform: "translate3d(-50%, -" + backPos + "px, 0)",
 				height: height,
 				width: width,
 				WebkitFilter: "blur(" + this.props.blur + "px)",
@@ -12627,6 +12635,13 @@ var Parallax = (function (_React$Component) {
 			    g = d.getElementsByTagName("body")[0];
 
 			return w.innerHeight || e.clientHeight || g.clientHeight;
+		}
+	}, {
+		key: "log",
+		value: function log() {
+			if (this.props.log) {
+				console.log(arguments);
+			}
 		}
 	}]);
 
