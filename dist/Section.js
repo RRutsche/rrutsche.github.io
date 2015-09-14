@@ -18,64 +18,83 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderJsx = require('./Header.jsx');
+var _classnames = require('classnames');
 
-var _HeaderJsx2 = _interopRequireDefault(_HeaderJsx);
+var _classnames2 = _interopRequireDefault(_classnames);
 
-var _SectionJsx = require('./Section.jsx');
+var Section = (function (_React$Component) {
+	function Section() {
+		_classCallCheck(this, Section);
 
-var _SectionJsx2 = _interopRequireDefault(_SectionJsx);
-
-var Index = (function (_React$Component) {
-	function Index() {
-		_classCallCheck(this, Index);
-
-		_get(Object.getPrototypeOf(Index.prototype), 'constructor', this).apply(this, arguments);
+		_get(Object.getPrototypeOf(Section.prototype), 'constructor', this).apply(this, arguments);
 	}
 
-	_inherits(Index, _React$Component);
+	_inherits(Section, _React$Component);
 
-	_createClass(Index, [{
+	_createClass(Section, [{
 		key: 'render',
 		value: function render() {
 			return _react2['default'].createElement(
 				'div',
-				{ className: 'rrutsche-page index' },
-				_react2['default'].createElement(_HeaderJsx2['default'], { title: 'rrutsche.github.io' }),
+				{ className: 'section' },
 				_react2['default'].createElement(
 					'div',
-					{ className: 'content' },
-					_react2['default'].createElement(
-						_SectionJsx2['default'],
-						{ title: 'react-parallax',
-							subtitle: 'A React Component for parallax effect.',
-							labels: ['react', 'js', 'npm'],
-							demoLink: '#parallax' },
-						_react2['default'].createElement(
-							'div',
-							null,
-							'The project lives on ',
-							_react2['default'].createElement(
-								'a',
-								{ href: 'https://github.com/RRutsche/react-parallax' },
-								'github'
-							),
-							' and is published on ',
-							_react2['default'].createElement(
-								'a',
-								{ href: 'https://www.npmjs.com/package/react-parallax' },
-								'npm'
-							),
-							'. Suggestions and critique are welcome.'
-						)
-					)
+					{ className: 'title' },
+					this.props.title
+				),
+				_react2['default'].createElement(
+					'div',
+					{ className: 'subtitle' },
+					this.props.subtitle
+				),
+				_react2['default'].createElement(
+					'div',
+					{ className: 'labels' },
+					this.getLabels()
+				),
+				_react2['default'].createElement('br', null),
+				_react2['default'].createElement(
+					'div',
+					null,
+					this.props.children
+				),
+				_react2['default'].createElement('br', null),
+				_react2['default'].createElement('br', null),
+				_react2['default'].createElement(
+					'a',
+					{ href: this.props.demoLink },
+					'Demo'
 				)
 			);
 		}
+	}, {
+		key: 'getLabels',
+		value: function getLabels() {
+			var labels = [];
+			this.props.labels.forEach(function (label) {
+				labels.push(_react2['default'].createElement(
+					'div',
+					{ className: (0, _classnames2['default'])('label', label) },
+					label
+				));
+			});
+			return labels;
+		}
 	}]);
 
-	return Index;
+	return Section;
 })(_react2['default'].Component);
 
-exports['default'] = Index;
+exports['default'] = Section;
+
+Section.propTypes = {
+	title: _react2['default'].PropTypes.string.isRequired,
+	subtitle: _react2['default'].PropTypes.string.isRequired,
+	labels: _react2['default'].PropTypes.array,
+	demoLink: _react2['default'].PropTypes.string.isRequired
+};
+
+Section.defaultProps = {
+	labels: []
+};
 module.exports = exports['default'];

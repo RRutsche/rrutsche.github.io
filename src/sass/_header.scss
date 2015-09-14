@@ -1,0 +1,40 @@
+.header {
+	height: 80*$px;
+	width: 100%;
+	@include flexy(0 0 auto);
+	@include display-flexy(row);
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-bottom: 80*$px;
+	background-color: $color_burnt_sienna;
+	z-index: 1;
+
+	&.light {
+		@include alpha-background-color('background-color', rgba(white, 0.1), white);
+	}
+
+
+	>div {
+		text-align: center;
+		line-height: 80*$px;
+		color: white;
+	}
+	.title {
+		@include flexy(1 1 auto);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		letter-spacing: -1*$px;
+	}
+	.left, .right {
+		position: relative;
+		height: 100%;
+		width: 80*$px;
+		margin: 0 10*$px;
+		cursor: pointer;
+		.text {
+			letter-spacing: 0;
+		}
+	}
+}

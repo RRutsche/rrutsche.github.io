@@ -78,7 +78,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * Fonts
  */
 /**
- * fontsizes for pos, posc, prep
+ * fontsizes
  */
 /**
  * Dimension
@@ -115,31 +115,161 @@ body {
  * MIXINS
  * ****************************************
  */
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* line 1, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page {
-  padding: 10px;
+  position: relative;
 }
 /* line 4, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page .text {
   margin: 10px;
 }
-/* line 9, ../../src/sass/_rrutschepage.scss */
-.rrutsche-page.demo .carousel-container {
-  position: relative;
-  width: 500px;
-  margin: 20px auto;
+/* line 8, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page .content {
+  margin-top: 80px;
+  padding: 10px;
 }
-/* line 16, ../../src/sass/_rrutschepage.scss */
+/* line 13, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page a {
+  text-decoration: none;
+  font-family: "Open Sans Normal", Arial, sans-serif;
+  color: #C29D4E;
+}
+/* line 17, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page a:hover {
+  text-decoration: underline;
+}
+/* line 22, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page .labels {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* line 26, ../../src/sass/_rrutschepage.scss */
+.rrutsche-page .labels .label {
+  display: inline-block;
+  background: grey;
+  border-radius: 4px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px 10px;
+}
+/* line 36, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax {
   text-align: center;
 }
-/* line 18, ../../src/sass/_rrutschepage.scss */
+/* line 38, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax h1 {
   font-size: 40px;
 }
-/* line 21, ../../src/sass/_rrutschepage.scss */
+/* line 41, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax h2 {
   font-size: 30px;
+}
+
+/* line 1, ../../src/sass/_header.scss */
+.header {
+  height: 80px;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 80px;
+  background-color: #EF6555;
+  z-index: 1;
+}
+/* line 13, ../../src/sass/_header.scss */
+.header.light {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 18, ../../src/sass/_header.scss */
+.header > div {
+  text-align: center;
+  line-height: 80px;
+  color: white;
+}
+/* line 23, ../../src/sass/_header.scss */
+.header .title {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -1px;
+}
+/* line 30, ../../src/sass/_header.scss */
+.header .left, .header .right {
+  position: relative;
+  height: 100%;
+  width: 80px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+/* line 36, ../../src/sass/_header.scss */
+.header .left .text, .header .right .text {
+  letter-spacing: 0;
+}
+
+/* line 1, ../../src/sass/_section.scss */
+.section {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+/* line 7, ../../src/sass/_section.scss */
+.section .title {
+  font-size: 24px;
+}
+/* line 10, ../../src/sass/_section.scss */
+.section .subtitle {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=main.css.map */

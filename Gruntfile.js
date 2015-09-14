@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 			},
 			// Re-build kitchensink
 			kitchensink: {
-				files: ['src/**/*.js', 'src/**/*.jsx'],
+				files: ['src/**/*.js', 'src/**/*.jsx', 'src/sass/**/*.scss'],
 				tasks: ['build-kitchensink']
 			},
 			// livereload on html change

@@ -5,7 +5,6 @@ Backbone.$ = require('jquery');
 
 /** View */
 var Index = require('./Index.jsx');
-var Demo = require('./Demo.jsx');
 var DemoParallax = require('./DemoParallax.jsx');
 var NotFound = require('./NotFound.jsx');
 

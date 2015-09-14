@@ -21,7 +21,7 @@
 body {
 	position: relative;
 	font-family: $font_light;
-	font-size: $font-size-normal;
+	font-size: $font_size_m;
 	background-color: $color_westar;
 	color: white;
 }
@@ -45,8 +45,19 @@ body {
 	@if $orientation == column {
 		$old_orient: vertical;
 	}
-	@include display-box;
-	@include box-orient($old_orient);
+
+	// old display box
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-box;
+	display: box;
+
+	// old box orientation
+	-webkit-box-orient: $old_orient;
+	-moz-box-orient: $old_orient;
+	-ms-box-orient: $old_orient;
+	box-orient: $old_orient;
+
 	@include display-flex();
 	@include flex-direction($orientation);
 }
@@ -57,9 +68,16 @@ body {
 	@if $value == $test {
 		$old_value: 0;
 	}
-	@include box-flex($old_value);
+
+	// old flex
+	-webkit-box-flex: $old_value;
+	-moz-box-flex: $old_value;
+	-ms-box-flex: $old_value;
+	box-flex: $old_value;
+
 	@include flex($value);
 }
+
 @mixin flexy-align($value) {
 
 	-webkit-box-pack: $value;
@@ -73,4 +91,22 @@ body {
 	-webkit-align-items: $value;
 	-ms-flex-align: $value;
 	align-items: $value;
+}
+
+@mixin blur($value) {
+	filter: blur($value);
+	-webkit-filter: blur($value);
+}
+
+@mixin fadeIn($duration) {
+	@include animation(fadeIn $duration ease-in-out);
+}
+
+@include keyframes(fadeIn) {
+	0% {
+		opacity: 0;
+ 	}
+	100% {
+		opacity: 1;
+	}
 }

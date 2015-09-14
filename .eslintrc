@@ -13,7 +13,7 @@
     "no-underscore-dangle": [0],
     "no-use-before-define": [0, "nofunc"],
     "no-unused-vars": 0,
-    "no-undef": 0,
+    "no-undef": 1,
     "no-trailing-spaces": 0,
     "comma-spacing": 0,
     "no-alert": 0,

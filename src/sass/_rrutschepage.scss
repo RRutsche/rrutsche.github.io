@@ -1,15 +1,35 @@
 .rrutsche-page {
-	padding: $bu;
+	position: relative;
 
 	.text {
 		margin: $bu;
 	}
+	
+	.content {
+		margin-top: 80*$px;
+		padding: $bu;
+	}
 
-	&.demo {
-		.carousel-container {
-			position: relative;
-			width: 500px;
-			margin: 20px auto;
+	a {
+		text-decoration: none;
+    	font-family: $font_normal;
+    	color: $color_tussock;
+    	&:hover {
+    		text-decoration: underline;
+    	}
+	}
+
+	.labels {
+		position: absolute;
+		top: 10*$px;
+		right: 10*$px;
+		.label {
+			display: inline-block;
+		    background: grey;
+		    border-radius: 4*$px;
+		    text-align: center;
+		    margin: 5*$px;
+		    padding: 5*$px 10*$px;
 		}
 	}
 
