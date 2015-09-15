@@ -12,8 +12,8 @@ export default class Index extends React.Component {
 							subtitle="A React Component for parallax effect."
 							labels={['react', 'js', 'npm']}
 							demoLink="#parallax">
-							<div>The project lives on <a href="https://github.com/RRutsche/react-parallax">github</a> and is published on <a href="https://www.npmjs.com/package/react-parallax">npm</a>. 
-							Suggestions and critique are welcome.</div>
+							<div>Any HTML content can be passed and displayed like in a normal <code>div</code> container. Additionally a background image can be defined which then will be translated while scrolling to get a parallax effect.</div>
+							<div>Published on <a href="https://github.com/RRutsche/react-parallax">github</a> and <a href="https://www.npmjs.com/package/react-parallax">npm</a>.</div>
 					</Section>
 				</div>
 			</div>

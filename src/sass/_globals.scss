@@ -26,87 +26,25 @@ body {
 	color: white;
 }
 
-/**
- * ****************************************
- * MIXINS
- * ****************************************
- */
-
-@mixin alpha-background-color($attribute, $color, $background) {
-	$percent: alpha($color) * 100%;
-	$opaque: opacify($color, 1);
-	$solid-color: mix($opaque, $background, $percent);
-	#{$attribute}: $solid-color;
-	#{$attribute}: $color;
+.flex-row {
+	@include display-flexy(row);
+}
+.flex-column {
+	@include display-flexy(column);
+}
+.flex-stretch {
+	@include flexy(1 1 auto);
+}
+.flex-shrink {
+	@include flexy(0 0 auto);	
 }
 
-@mixin display-flexy($orientation) {
-	$old_orient: horizontal;
-	@if $orientation == column {
-		$old_orient: vertical;
-	}
-
-	// old display box
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-box;
-	display: box;
-
-	// old box orientation
-	-webkit-box-orient: $old_orient;
-	-moz-box-orient: $old_orient;
-	-ms-box-orient: $old_orient;
-	box-orient: $old_orient;
-
-	@include display-flex();
-	@include flex-direction($orientation);
+.font-s {
+	font-size: $font_size_s;
 }
-
-@mixin flexy($value) {
-	$old_value: 1;
-	$test: 0 0 auto;
-	@if $value == $test {
-		$old_value: 0;
-	}
-
-	// old flex
-	-webkit-box-flex: $old_value;
-	-moz-box-flex: $old_value;
-	-ms-box-flex: $old_value;
-	box-flex: $old_value;
-
-	@include flex($value);
+.font-m {
+	font-size: $font_size_m;
 }
-
-@mixin flexy-align($value) {
-
-	-webkit-box-pack: $value;
-	-moz-box-pack: $value;
-	-webkit-justify-content: $value;
-	-ms-flex-pack: $value;
-	justify-content: $value;
-
-	-webkit-box-align: $value;
-	-moz-box-align: $value;
-	-webkit-align-items: $value;
-	-ms-flex-align: $value;
-	align-items: $value;
-}
-
-@mixin blur($value) {
-	filter: blur($value);
-	-webkit-filter: blur($value);
-}
-
-@mixin fadeIn($duration) {
-	@include animation(fadeIn $duration ease-in-out);
-}
-
-@include keyframes(fadeIn) {
-	0% {
-		opacity: 0;
- 	}
-	100% {
-		opacity: 1;
-	}
+.font-l {
+	font-size: $font_size_l;
 }

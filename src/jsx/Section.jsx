@@ -6,14 +6,16 @@ export default class Section extends React.Component {
 	render() {
 		return (
 			<div className="section">
-				<div className="title">{this.props.title}</div>
-				<div className="subtitle">{this.props.subtitle}</div>
+				<div className="section-inner">
+					<div className="title">{this.props.title}</div>
+					<div className="subtitle">{this.props.subtitle}</div>
+					<br/>
+					<div>{this.props.children}</div>
+					<br/>
+					<a href={this.props.demoLink}>Demo</a>
+					<br/>
+				</div>
 				<div className="labels">{this.getLabels()}</div>
-				<br/>
-				<div>{this.props.children}</div>
-				<br/>
-				<br/>
-				<a href={this.props.demoLink}>Demo</a>
 			</div>
 		);
 	}

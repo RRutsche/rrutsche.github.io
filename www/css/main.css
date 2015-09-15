@@ -83,38 +83,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /**
  * Dimension
  */
-@font-face {
-  font-family: 'Open Sans Light';
-  src: url("../assets/font/opensanslight.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans Light Italic';
-  src: url("../assets/font/opensanslightitalic.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans Normal';
-  src: url("../assets/font/opensansregular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-/* line 21, ../../src/sass/_globals.scss */
-body {
-  position: relative;
-  font-family: "Open Sans Light", Arial, sans-serif;
-  font-size: 18px;
-  background-color: #E3DFD7;
-  color: white;
-}
-
-/**
- * ****************************************
- * MIXINS
- * ****************************************
- */
 @-moz-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -139,6 +107,100 @@ body {
     opacity: 1;
   }
 }
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url("../assets/font/opensanslight.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Light Italic';
+  src: url("../assets/font/opensanslightitalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Normal';
+  src: url("../assets/font/opensansregular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 21, ../../src/sass/_globals.scss */
+body {
+  position: relative;
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 24px;
+  background-color: #E3DFD7;
+  color: white;
+}
+
+/* line 29, ../../src/sass/_globals.scss */
+.flex-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* line 32, ../../src/sass/_globals.scss */
+.flex-column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 35, ../../src/sass/_globals.scss */
+.flex-stretch {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+/* line 38, ../../src/sass/_globals.scss */
+.flex-shrink {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+/* line 42, ../../src/sass/_globals.scss */
+.font-s {
+  font-size: 18px;
+}
+
+/* line 45, ../../src/sass/_globals.scss */
+.font-m {
+  font-size: 24px;
+}
+
+/* line 48, ../../src/sass/_globals.scss */
+.font-l {
+  font-size: 32px;
+}
+
 /* line 1, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page {
   position: relative;
@@ -163,29 +225,14 @@ body {
   text-decoration: underline;
 }
 /* line 22, ../../src/sass/_rrutschepage.scss */
-.rrutsche-page .labels {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-/* line 26, ../../src/sass/_rrutschepage.scss */
-.rrutsche-page .labels .label {
-  display: inline-block;
-  background: grey;
-  border-radius: 4px;
-  text-align: center;
-  margin: 5px;
-  padding: 5px 10px;
-}
-/* line 36, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax {
   text-align: center;
 }
-/* line 38, ../../src/sass/_rrutschepage.scss */
+/* line 24, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax h1 {
   font-size: 40px;
 }
-/* line 41, ../../src/sass/_rrutschepage.scss */
+/* line 27, ../../src/sass/_rrutschepage.scss */
 .rrutsche-page.demo-parallax h2 {
   font-size: 30px;
 }
@@ -259,17 +306,50 @@ body {
 /* line 1, ../../src/sass/_section.scss */
 .section {
   position: relative;
-  display: block;
+  display: inline-block;
   border-bottom: 1px solid white;
   padding: 10px;
+  font-size: 18px;
+  color: #253E66;
 }
-/* line 7, ../../src/sass/_section.scss */
+/* line 9, ../../src/sass/_section.scss */
 .section .title {
-  font-size: 24px;
+  font-size: 32px;
+  color: white;
 }
-/* line 10, ../../src/sass/_section.scss */
+/* line 13, ../../src/sass/_section.scss */
 .section .subtitle {
-  font-size: 14px;
+  font-size: 18px;
+  color: white;
+}
+/* line 18, ../../src/sass/_section.scss */
+.section .section-inner {
+  display: inline-block;
+  width: 80%;
+}
+/* line 23, ../../src/sass/_section.scss */
+.section .labels {
+  width: 20%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 28, ../../src/sass/_section.scss */
+.section .labels .label {
+  display: inline-block;
+  background: grey;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 320px) {
+  /* line 41, ../../src/sass/_section.scss */
+  .section .section-inner, .section .labels {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

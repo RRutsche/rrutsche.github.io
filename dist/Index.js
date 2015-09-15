@@ -54,19 +54,30 @@ var Index = (function (_React$Component) {
 						_react2['default'].createElement(
 							'div',
 							null,
-							'The project lives on ',
+							'Any HTML content can be passed and displayed like in a normal ',
+							_react2['default'].createElement(
+								'code',
+								null,
+								'div'
+							),
+							' container. Additionally a background image can be defined which then will be translated while scrolling to get a parallax effect.'
+						),
+						_react2['default'].createElement(
+							'div',
+							null,
+							'Published on ',
 							_react2['default'].createElement(
 								'a',
 								{ href: 'https://github.com/RRutsche/react-parallax' },
 								'github'
 							),
-							' and is published on ',
+							' and ',
 							_react2['default'].createElement(
 								'a',
 								{ href: 'https://www.npmjs.com/package/react-parallax' },
 								'npm'
 							),
-							'. Suggestions and critique are welcome.'
+							'.'
 						)
 					)
 				)

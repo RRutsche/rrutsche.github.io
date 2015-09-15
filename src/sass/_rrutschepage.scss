@@ -19,20 +19,6 @@
     	}
 	}
 
-	.labels {
-		position: absolute;
-		top: 10*$px;
-		right: 10*$px;
-		.label {
-			display: inline-block;
-		    background: grey;
-		    border-radius: 4*$px;
-		    text-align: center;
-		    margin: 5*$px;
-		    padding: 5*$px 10*$px;
-		}
-	}
-
 	&.demo-parallax {
 		text-align: center;
 		h1 {

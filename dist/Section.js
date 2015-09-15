@@ -39,31 +39,35 @@ var Section = (function (_React$Component) {
 				{ className: 'section' },
 				_react2['default'].createElement(
 					'div',
-					{ className: 'title' },
-					this.props.title
-				),
-				_react2['default'].createElement(
-					'div',
-					{ className: 'subtitle' },
-					this.props.subtitle
+					{ className: 'section-inner' },
+					_react2['default'].createElement(
+						'div',
+						{ className: 'title' },
+						this.props.title
+					),
+					_react2['default'].createElement(
+						'div',
+						{ className: 'subtitle' },
+						this.props.subtitle
+					),
+					_react2['default'].createElement('br', null),
+					_react2['default'].createElement(
+						'div',
+						null,
+						this.props.children
+					),
+					_react2['default'].createElement('br', null),
+					_react2['default'].createElement(
+						'a',
+						{ href: this.props.demoLink },
+						'Demo'
+					),
+					_react2['default'].createElement('br', null)
 				),
 				_react2['default'].createElement(
 					'div',
 					{ className: 'labels' },
 					this.getLabels()
-				),
-				_react2['default'].createElement('br', null),
-				_react2['default'].createElement(
-					'div',
-					null,
-					this.props.children
-				),
-				_react2['default'].createElement('br', null),
-				_react2['default'].createElement('br', null),
-				_react2['default'].createElement(
-					'a',
-					{ href: this.props.demoLink },
-					'Demo'
 				)
 			);
 		}
