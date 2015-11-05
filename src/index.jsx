@@ -1,9 +1,10 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Main = require('./jsx/App.jsx');
 
-React.render(
+ReactDOM.render(
     <Main />, 
-    document.body
+    document.getElementById('app')
 );
 
 module.exports = Main;
