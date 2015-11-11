@@ -75,10 +75,10 @@ var Section = (function (_React$Component) {
 		key: 'getLabels',
 		value: function getLabels() {
 			var labels = [];
-			this.props.labels.forEach(function (label) {
+			this.props.labels.forEach(function (label, index) {
 				labels.push(_react2['default'].createElement(
 					'div',
-					{ className: (0, _classnames2['default'])('label', label) },
+					{ key: 'label' + label + index, className: (0, _classnames2['default'])('label', label) },
 					label
 				));
 			});

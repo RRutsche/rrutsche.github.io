@@ -22,8 +22,8 @@ export default class Section extends React.Component {
 
 	getLabels() {
 		let labels = [];
-		this.props.labels.forEach(function(label) {
-			labels.push(<div className={classNames('label', label)}>{label}</div>);
+		this.props.labels.forEach(function(label, index) {
+			labels.push(<div key={'label'+label+index} className={classNames('label', label)}>{label}</div>);
 		});
 		return labels;
 	}
